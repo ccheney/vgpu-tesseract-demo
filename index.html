@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta name="theme-color" content="#09090b" />
+		<meta
+			name="description"
+			content="A password-reactive 4D tesseract rendered with WebGPU and vGPU."
+		/>
+		<title>vGPU Tesseract Demo</title>
+	</head>
+	<body>
+		<main class="demo" data-demo data-renderer="loading">
+			<section class="visual" aria-hidden="true">
+				<canvas data-tesseract-canvas></canvas>
+				<div class="coordinates">
+					<span>W⁴ → R³ → R²</span>
+					<span>16 VERTICES · 32 EDGES</span>
+				</div>
+			</section>
+
+			<section class="entry">
+				<form aria-labelledby="demo-title">
+					<header>
+						<h1 id="demo-title">IDENTIFY YOURSELF</h1>
+						<p>Type anything. The geometry is listening.</p>
+					</header>
+
+					<label class="sr-only" for="password">Password</label>
+					<div class="control">
+						<input
+							id="password"
+							name="password"
+							type="password"
+							placeholder="ENTER_ACCESS_KEY"
+							autocomplete="off"
+							maxlength="256"
+							required
+							spellcheck="false"
+							aria-describedby="status"
+						/>
+						<button type="submit" aria-label="Test password">
+							<svg aria-hidden="true" viewBox="0 0 24 24">
+								<path d="M5 12h13m-5-5 5 5-5 5" />
+							</svg>
+						</button>
+					</div>
+					<p id="status" class="status" aria-live="polite" data-status></p>
+				</form>
+			</section>
+		</main>
+
+		<script type="module" src="/src/main.ts"></script>
+	</body>
+</html>
